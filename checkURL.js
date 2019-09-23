@@ -44,14 +44,12 @@ let getResponse = function(url) {
 
     req.end();
 
-  }).then(result=>{
-    return new Promise((resolve, reject) => {
-      resCount++;
-      process.stdout.clearLine();
-      process.stdout.cursorTo(0);
-      process.stdout.write(Math.floor(resCount / newLinks.length * 100) + '%');
-      resolve(result);
-    });
+  }).then(result => {
+    resCount++;
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(Math.floor(resCount / newLinks.length * 100) + '%');
+    return result;
   });
 }
 

@@ -1,4 +1,6 @@
-Checked: Mon Sep 23 2019 14:26:43 GMT-0400 (Eastern Daylight Time)
+Checked: Mon Sep 23 2019 15:35:06 GMT-0400 (Eastern Daylight Time)
 
 200	SUCCESS		player.vimeo.com/video/196139024 
 ___	ERROR	problem with request: Hostname/IP does not match certificate's altnames: Host: www.nature.com.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca (www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html)
+403	FORBIDDEN		onq.queensu.ca/d2l/le/91939/discussions/List 
+403	FORBIDDEN		onq.queensu.ca/d2l/le/91939/discussions/List 
