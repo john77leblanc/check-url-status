@@ -11,3 +11,10 @@ http://www.proteinatlas.org/humanproteome/druggable
 https://youtu.be/JQcFk7J_Tf4
 https://youtu.be/hvNJ3yWZQbE
 http://hmdb.com
+http://pfam.xfam.org/
+http://www.uniprot.org/help/reference_proteome
+http://omim.org/
+http://www.proteinatlas.org/
+http://www.hmdb.ca/
+http://www.phosphosite.org/homeAction.action
+http://dbptm.mbc.nctu.edu.tw/

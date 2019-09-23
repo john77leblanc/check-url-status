@@ -43,14 +43,23 @@ let getResponse = function(url) {
     });
 
     req.end();
+
+  }).then(()=>{
+    resCount++;
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
+    process.stdout.write(Math.floor(resCount / newLinks.length * 100) + '%');
   });
 }
 
+let resCount = 0;
 let newLinks = links.map(splitURL);
+
+process.stdout.write('Checking statuses...\n');
 
 Promise.all(
   newLinks.map(getResponse)
 ).then(responses => {
   fs.writeFileSync('link_results.txt',responses.join('\n'),'utf8');
-  console.log('File Saved.');
+  process.stdout.write('\nFile Saved.');
 });
