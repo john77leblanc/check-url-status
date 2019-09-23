@@ -21,7 +21,7 @@ let splitURL = function(url) {
 }
 
 let getResponse = function(url) {
-  return new Promise((resolve,reject)=>{
+  return new Promise((resolve, reject)=>{
     let result = '';
     let options = {
       method : 'HEAD',
@@ -44,11 +44,14 @@ let getResponse = function(url) {
 
     req.end();
 
-  }).then(()=>{
-    resCount++;
-    process.stdout.clearLine();
-    process.stdout.cursorTo(0);
-    process.stdout.write(Math.floor(resCount / newLinks.length * 100) + '%');
+  }).then(result=>{
+    return new Promise((resolve, reject) => {
+      resCount++;
+      process.stdout.clearLine();
+      process.stdout.cursorTo(0);
+      process.stdout.write(Math.floor(resCount / newLinks.length * 100) + '%');
+      resolve(result);
+    });
   });
 }
 
@@ -60,6 +63,7 @@ process.stdout.write('Checking statuses...\n');
 Promise.all(
   newLinks.map(getResponse)
 ).then(responses => {
-  fs.writeFileSync('link_results.txt',responses.join('\n'),'utf8');
-  process.stdout.write('\nFile Saved.');
+  let file = 'link_results.txt';
+  fs.writeFileSync(file, responses.join('\n'),'utf8');
+  process.stdout.write('\nFile Saved. Open ' + file);
 });
