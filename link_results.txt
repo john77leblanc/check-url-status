@@ -1,0 +1,13 @@
+200	SUCCESS		www.phosphosite.org/homeAction.action 
+200	SUCCESS		hupo.org/human-proteome-project 
+200	SUCCESS		www.uniprot.org/ 
+403	FORBIDDEN		onq.queensu.ca/d2l/le/91939/discussions/List 
+200	SUCCESS		www.proteinatlas.org/ 
+301	REDIRECT		www.proteinatlas.org/humanproteome (Original link: https://www.proteinatlas.org/humanproteome/tissue)
+404	NOT FOUND		www.proteinatlas.org/humanproteome/tissue+specific 
+301	REDIRECT		www.proteinatlas.org/humanproteome/regulatory (Original link: https://www.proteinatlas.org/humanproteome/tissue/regulatory)
+301	REDIRECT		www.proteinatlas.org/humanproteome/cancer (Original link: https://www.proteinatlas.org/humanproteome/tissue/cancer)
+301	REDIRECT		www.proteinatlas.org/humanproteome/druggable (Original link: https://www.proteinatlas.org/humanproteome/tissue/druggable)
+302	REDIRECT		youtu.be/JQcFk7J_Tf4 (Original link: https://www.youtube.com/watch?v=JQcFk7J_Tf4&feature=youtu.be)
+302	REDIRECT		youtu.be/hvNJ3yWZQbE (Original link: https://www.youtube.com/watch?v=hvNJ3yWZQbE&feature=youtu.be)
+___	ERROR	problem with request: getaddrinfo ENOTFOUND hmdb.com hmdb.com:443 (hmdb.com/)

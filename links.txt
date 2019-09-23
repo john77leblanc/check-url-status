@@ -1,0 +1,13 @@
+http://www.phosphosite.org/homeAction.action
+https://hupo.org/human-proteome-project
+http://www.uniprot.org/
+https://onq.queensu.ca/d2l/le/91939/discussions/List
+http://www.proteinatlas.org/
+http://www.proteinatlas.org/humanproteome
+http://www.proteinatlas.org/humanproteome/tissue+specific
+http://www.proteinatlas.org/humanproteome/regulatory
+http://www.proteinatlas.org/humanproteome/cancer
+http://www.proteinatlas.org/humanproteome/druggable
+https://youtu.be/JQcFk7J_Tf4
+https://youtu.be/hvNJ3yWZQbE
+http://hmdb.com
