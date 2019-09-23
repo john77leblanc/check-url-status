@@ -1,11 +1,4 @@
-200	SUCCESS		www.phosphosite.org/homeAction.action 
-200	SUCCESS		hupo.org/human-proteome-project 
-200	SUCCESS		www.uniprot.org/ 
-403	FORBIDDEN		onq.queensu.ca/d2l/le/91939/discussions/List 
-200	SUCCESS		www.proteinatlas.org/ 
-301	REDIRECT		www.proteinatlas.org/humanproteome (Original link: https://www.proteinatlas.org/humanproteome/tissue)
-404	NOT FOUND		www.proteinatlas.org/humanproteome/tissue+specific 
-301	REDIRECT		www.proteinatlas.org/humanproteome/regulatory (Original link: https://www.proteinatlas.org/humanproteome/tissue/regulatory)
-301	REDIRECT		www.proteinatlas.org/humanproteome/cancer (Original link: https://www.proteinatlas.org/humanproteome/tissue/cancer)
-301	REDIRECT		www.proteinatlas.org/humanproteome/druggable (Original link: https://www.proteinatlas.org/humanproteome/tissue/druggable)
-302	REDIRECT		youtu.be/JQcFk7J_Tf4 (Original link: https://www.youtube.com/watch?v=JQcFk7J_Tf4&feature=youtu.be)
+Checked: Mon Sep 23 2019 14:26:43 GMT-0400 (Eastern Daylight Time)
+
+200	SUCCESS		player.vimeo.com/video/196139024 
+___	ERROR	problem with request: Hostname/IP does not match certificate's altnames: Host: www.nature.com.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca (www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html)

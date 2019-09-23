@@ -64,6 +64,8 @@ Promise.all(
   newLinks.map(getResponse)
 ).then(responses => {
   let file = 'link_results.txt';
-  fs.writeFileSync(file, responses.join('\n'),'utf8');
+  let d = new Date;
+  let prepend = 'Checked: ' + d;
+  fs.writeFileSync(file, prepend + '\n\n' + responses.join('\n'),'utf8');
   process.stdout.write('\nFile Saved. Open ' + file);
 });
