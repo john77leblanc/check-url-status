@@ -33,15 +33,13 @@ let getResponse = function(url) {
 
     let req = http.request(options, res => {
       result.status   = res.statusCode;
-      result.message  = result.status == 200 ? 'SUCCESS' : result.status == 302 || result.status == 301 ? 'REDIRECT' : result.status == 404 ? 'NOT FOUND' : result.status == 403 ? 'FORBIDDEN' : '';
       result.redirect = result.status == 302 || result.status == 301 ? '(Original link: '+res.headers.location+')' : '';
-      //result = `${res.statusCode}\t${s}\t\t${url.host + url.path} ${r}`;
       resolve(result);
     });
 
     req.on('error', e => {
       result.status = '___';
-      result.error = `problem with request: ${e.message} (${url.host+url.path})`;
+      result.error = `problem with request: ${e.message}`;
       resolve(result);
     });
 
@@ -59,10 +57,7 @@ let getResponse = function(url) {
 let getStatus = code => 
   result => result.status === code;
 
-
-let getError = result => result.error;
-
-let returnMessage = result => `\t${result.url}`;
+let returnMessage = result => `\t${result.url} ${result.redirect}`;
 
 let returnError = result => `\t${result.url}\n\t\t${result.error}`;
 
