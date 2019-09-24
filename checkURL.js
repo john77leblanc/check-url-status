@@ -22,7 +22,9 @@ let splitURL = function(url) {
 
 let getResponse = function(url) {
   return new Promise((resolve, reject)=>{
-    let result = '';
+    let result = {
+      url: url.host + url.path
+    };
     let options = {
       method : 'HEAD',
       host : url.host,
@@ -30,15 +32,16 @@ let getResponse = function(url) {
     };
 
     let req = http.request(options, res => {
-      let status = res.statusCode;
-      let s = status == 200 ? 'SUCCESS' : status == 302 || status == 301 ? 'REDIRECT' : status == 404 ? 'NOT FOUND' : status == 403 ? 'FORBIDDEN' : '';
-      let r = status == 302 || status == 301 ? '(Original link: '+res.headers.location+')' : '';
-      result = `${res.statusCode}\t${s}\t\t${url.host + url.path} ${r}`;
+      result.status   = res.statusCode;
+      result.message  = result.status == 200 ? 'SUCCESS' : result.status == 302 || result.status == 301 ? 'REDIRECT' : result.status == 404 ? 'NOT FOUND' : result.status == 403 ? 'FORBIDDEN' : '';
+      result.redirect = result.status == 302 || result.status == 301 ? '(Original link: '+res.headers.location+')' : '';
+      //result = `${res.statusCode}\t${s}\t\t${url.host + url.path} ${r}`;
       resolve(result);
     });
 
     req.on('error', e => {
-      result = `___\tERROR\tproblem with request: ${e.message} (${url.host+url.path})`;
+      result.status = '___';
+      result.error = `problem with request: ${e.message} (${url.host+url.path})`;
       resolve(result);
     });
 
@@ -53,6 +56,16 @@ let getResponse = function(url) {
   });
 }
 
+let getStatus = code => 
+  result => result.status === code;
+
+
+let getError = result => result.error;
+
+let returnMessage = result => `\t${result.url}`;
+
+let returnError = result => `\t${result.url}\n\t\t${result.error}`;
+
 let resCount = 0;
 let newLinks = links.map(splitURL);
 
@@ -64,6 +77,28 @@ Promise.all(
   let file = 'link_results.txt';
   let d = new Date;
   let prepend = 'Checked: ' + d;
-  fs.writeFileSync(file, prepend + '\n\n' + responses.join('\n'),'utf8');
+
+  let notFound  = responses.filter(getStatus(404));
+  let success   = responses.filter(getStatus(200));
+  let forbidden = responses.filter(getStatus(403));
+  let redirect  = responses.filter(getStatus(301)).concat(responses.filter(getStatus(302)));
+  let error     = responses.filter(getStatus('___'));
+
+  let contents  = `${prepend}
+
+404 NOT FOUND
+${notFound.map(returnMessage).join('\n')}\n
+403 FORBIDDEN (most likely requires login)
+${forbidden.map(returnMessage).join('\n')}\n
+ERROR
+${error.map(returnError).join('\n')}\n
+200 SUCCESS
+${success.map(returnMessage).join('\n')}\n
+301/302 REDIRECT
+${redirect.map(returnMessage).join('\n')}\n
+`;
+
+
+  fs.writeFileSync(file, contents,'utf8');
   process.stdout.write('\nFile Saved. Open ' + file);
 });

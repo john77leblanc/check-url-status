@@ -1,6 +1,62 @@
-Checked: Mon Sep 23 2019 15:35:06 GMT-0400 (Eastern Daylight Time)
+Checked: Tue Sep 24 2019 10:12:43 GMT-0400 (Eastern Daylight Time)
 
-200	SUCCESS		player.vimeo.com/video/196139024 
-___	ERROR	problem with request: Hostname/IP does not match certificate's altnames: Host: www.nature.com.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca (www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html)
-403	FORBIDDEN		onq.queensu.ca/d2l/le/91939/discussions/List 
-403	FORBIDDEN		onq.queensu.ca/d2l/le/91939/discussions/List 
+404 NOT FOUND
+	www.proteinatlas.org/humanproteome/tissue+specific
+
+403 FORBIDDEN (most likely requires login)
+	onq.queensu.ca/d2l/le/91939/discussions/List
+	onq.queensu.ca/d2l/le/91939/discussions/List
+	onq.queensu.ca/d2l/le/91939/discussions/List
+	onq.queensu.ca/d2l/le/91939/discussions/List
+	onq.queensu.ca/d2l/le/91939/discussions/List
+
+ERROR
+	www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html
+		problem with request: Hostname/IP does not match certificate's altnames: Host: www.nature.com.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca (www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html)
+	www-ncbi-nlm-nih-gov.proxy.queensu.ca/pmc/articles/PMC3682907/
+		problem with request: Parse Error (www-ncbi-nlm-nih-gov.proxy.queensu.ca/pmc/articles/PMC3682907/)
+	www.plantphysiol.org.proxy.queensu.ca/content/158/3/1139.short
+		problem with request: Hostname/IP does not match certificate's altnames: Host: www.plantphysiol.org.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca (www.plantphysiol.org.proxy.queensu.ca/content/158/3/1139.short)
+	www.hmdb.ca/
+		problem with request: connect ETIMEDOUT 107.170.111.174:443 (www.hmdb.ca/)
+	www.hmdb.ca/
+		problem with request: connect ETIMEDOUT 107.170.111.174:443 (www.hmdb.ca/)
+	pubs-niaaa-nih-gov.proxy.queensu.ca/publications/arh27-4/317-324.htm
+		problem with request: Parse Error (pubs-niaaa-nih-gov.proxy.queensu.ca/publications/arh27-4/317-324.htm)
+	dbptm.mbc.nctu.edu.tw/
+		problem with request: certificate has expired (dbptm.mbc.nctu.edu.tw/)
+	www.hmdb.ca/
+		problem with request: connect ETIMEDOUT 107.170.111.174:443 (www.hmdb.ca/)
+	dbptm.mbc.nctu.edu.tw/
+		problem with request: certificate has expired (dbptm.mbc.nctu.edu.tw/)
+	www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html
+		problem with request: Hostname/IP does not match certificate's altnames: Host: www.nature.com.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca (www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html)
+
+200 SUCCESS
+	player.vimeo.com/video/196139024
+	hupo.org/human-proteome-project
+	www.uniprot.org/
+	www.proteinatlas.org/
+	www.proteinatlas.org/
+	www.proteinatlas.org/
+	www.proteinatlas.org/
+	www.phosphosite.org/homeAction.action
+	www.phosphosite.org/homeAction.action
+	pfam.xfam.org/
+	www.uniprot.org/help/reference_proteome
+	omim.org/
+	www.proteinatlas.org/
+	www.phosphosite.org/homeAction.action
+	pfam.xfam.org/
+	www.uniprot.org/
+	omim.org/
+
+301/302 REDIRECT
+	www.proteinatlas.org/humanproteome
+	www.proteinatlas.org/humanproteome/regulatory
+	www.proteinatlas.org/humanproteome/cancer
+	www.proteinatlas.org/humanproteome/druggable
+	youtu.be/AhsIF-cmoQQ
+	youtu.be/JQcFk7J_Tf4
+	youtu.be/hvNJ3yWZQbE
+
