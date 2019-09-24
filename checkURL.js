@@ -82,18 +82,21 @@ Promise.all(
   let contents  = `${prepend}
 
 404 NOT FOUND
-${notFound.map(returnMessage).join('\n')}\n
+${notFound.map(returnMessage).join('\n')}
+
 403 FORBIDDEN (most likely requires login)
-${forbidden.map(returnMessage).join('\n')}\n
+${forbidden.map(returnMessage).join('\n')}
+
 ERROR
-${error.map(returnError).join('\n')}\n
+${error.map(returnError).join('\n')}
+
 200 SUCCESS
-${success.map(returnMessage).join('\n')}\n
+${success.map(returnMessage).join('\n')}
+
 301/302 REDIRECT
-${redirect.map(returnMessage).join('\n')}\n
+${redirect.map(returnMessage).join('\n')}
 `;
 
-
   fs.writeFileSync(file, contents,'utf8');
-  process.stdout.write('\nFile Saved. Open ' + file);
+  process.stdout.write('\nFile Saved. Open ' + __dirname + '\\' + file);
 });
