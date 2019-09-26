@@ -1,4 +1,4 @@
-Checked: Tue Sep 24 2019 10:54:37 GMT-0400 (Eastern Daylight Time)
+Checked: Thu Sep 26 2019 14:58:51 GMT-0400 (Eastern Daylight Time)
 
 404 NOT FOUND
 	www.proteinatlas.org/humanproteome/tissue+specific 
@@ -59,4 +59,3 @@ ERROR
 	youtu.be/AhsIF-cmoQQ (Original link: https://www.youtube.com/watch?v=AhsIF-cmoQQ&feature=youtu.be)
 	youtu.be/JQcFk7J_Tf4 (Original link: https://www.youtube.com/watch?v=JQcFk7J_Tf4&feature=youtu.be)
 	youtu.be/hvNJ3yWZQbE (Original link: https://www.youtube.com/watch?v=hvNJ3yWZQbE&feature=youtu.be)
-

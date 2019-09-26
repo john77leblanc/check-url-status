@@ -49,7 +49,7 @@ let getResponse = function(url) {
     resCount++;
     process.stdout.clearLine();
     process.stdout.cursorTo(0);
-    process.stdout.write(Math.floor(resCount / newLinks.length * 100) + '%');
+    process.stdout.write(`${resCount}/${newLinks.length}\t${progressBar(resCount,newLinks.length)} ${Math.floor(resCount / newLinks.length * 100)}%`);
     return result;
   });
 }
@@ -60,6 +60,13 @@ let getStatus = code =>
 let returnMessage = result => `\t${result.url} ${result.redirect}`;
 
 let returnError = result => `\t${result.url}\n\t\t${result.error}`;
+
+let progressBar = (i,t) => {
+  let total = 20;
+  let progress = Math.floor(i / t * total);
+  let remainder = total - progress;
+  return `[${"#".repeat(progress)}${"-".repeat(remainder)}]`;
+}
 
 let resCount = 0;
 let newLinks = links.map(splitURL);
