@@ -51,7 +51,7 @@ let getResponse = function(url) {
     process.stdout.cursorTo(0);
     process.stdout.write(`${resCount}/${newLinks.length}\t${progressBar(resCount,newLinks.length)} ${Math.floor(resCount / newLinks.length * 100)}%`);
     return result;
-  });
+  }).catch(reason => console.log(reason));
 }
 
 let getStatus = code => 
@@ -106,4 +106,4 @@ ${redirect.map(returnMessage).join('\n')}
 
   fs.writeFileSync(file, contents,'utf8');
   process.stdout.write('\nFile Saved. Open ' + __dirname + '\\' + file);
-});
+}).catch(reason => console.log(reason));
