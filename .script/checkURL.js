@@ -1,7 +1,8 @@
 let fs = require('fs');
 let http = require('https');
+let fspath = require('path');
 
-let links = fs.readFileSync('./links.txt','utf8').trim().replace(/https:\/\/|http:\/\//g,'').split('\r\n');
+let links = fs.readFileSync(fspath.join(__dirname, '..', 'links', 'links.txt'),'utf8').trim().replace(/https:\/\/|http:\/\//g,'').split('\r\n');
 
 let splitURL = function(url) {
   let l = url.indexOf('/');
@@ -76,7 +77,7 @@ process.stdout.write('Checking statuses...\n');
 Promise.all(
   newLinks.map(getResponse)
 ).then(responses => {
-  let file = 'link_results.txt';
+  let file = fspath.join(__dirname, '..', 'links', 'link_results.txt');
   let d = new Date;
   let prepend = 'Checked: ' + d;
 
@@ -105,5 +106,5 @@ ${redirect.map(returnMessage).join('\n')}
 `;
 
   fs.writeFileSync(file, contents,'utf8');
-  process.stdout.write('\nFile Saved. Open ' + __dirname + '\\' + file);
+  process.stdout.write('\nFile Saved. Open ' + fspath.join(__dirname, '..', 'links') + '\\' + file);
 }).catch(reason => console.log(reason));

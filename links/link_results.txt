@@ -1,4 +1,4 @@
-Checked: Tue Oct 01 2019 14:05:43 GMT-0400 (Eastern Daylight Time)
+Checked: Tue Oct 01 2019 15:46:26 GMT-0400 (Eastern Daylight Time)
 
 404 NOT FOUND
 	www.proteinatlas.org/humanproteome/tissue+specific 
@@ -24,11 +24,11 @@ ERROR
 	pubs-niaaa-nih-gov.proxy.queensu.ca/publications/arh27-4/317-324.htm
 		problem with request: Parse Error
 	dbptm.mbc.nctu.edu.tw/
-		problem with request: certificate has expired
+		problem with request: connect ETIMEDOUT 140.113.239.236:443
 	www.hmdb.ca/
 		problem with request: connect ETIMEDOUT 107.170.111.174:443
 	dbptm.mbc.nctu.edu.tw/
-		problem with request: certificate has expired
+		problem with request: connect ETIMEDOUT 140.113.239.236:443
 	www.nature.com.proxy.queensu.ca/nrm/journal/v4/n1/full/nrm1007.html
 		problem with request: Hostname/IP does not match certificate's altnames: Host: www.nature.com.proxy.queensu.ca. is not in the cert's altnames: DNS:*.proxy.queensu.ca, DNS:proxy.queensu.ca
 
