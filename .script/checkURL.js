@@ -2,7 +2,7 @@ let fs = require('fs');
 let http = require('https');
 let fspath = require('path');
 
-let links = fs.readFileSync(fspath.join(__dirname, '..', 'links', 'links.txt'),'utf8').trim().replace(/https:\/\/|http:\/\//g,'').split('\r\n');
+let links = fs.readFileSync(fspath.join(__dirname, '..', 'links', 'links.txt'),'utf8').trim().replace(/https:\/\/|http:\/\/|\r/g,'').split('\n');
 
 let splitURL = function(url) {
   let l = url.indexOf('/');
@@ -24,7 +24,7 @@ let splitURL = function(url) {
 let getResponse = function(url) {
   return new Promise((resolve, reject)=>{
     let result = {
-      url: url.host + url.path
+      uri: url.host + url.path
     };
     let options = {
       method : 'HEAD',
@@ -58,9 +58,9 @@ let getResponse = function(url) {
 let getStatus = code => 
   result => result.status === code;
 
-let returnMessage = result => `\t${result.url} ${result.redirect}`;
+let returnMessage = result => `\t${result.uri} ${result.redirect}`;
 
-let returnError = result => `\t${result.url}\n\t\t${result.error}`;
+let returnError = result => `\t${result.uri}\n\t\t${result.error}`;
 
 let progressBar = (i,t) => {
   let total = 20;
