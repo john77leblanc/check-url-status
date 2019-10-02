@@ -1,8 +1,5 @@
-#!/bin/sh
-cd `dirname $0`
-cd \.script
-clear
+cd `dirname "$0"`
+cd .script
 node checkUrl
-cd ..
-cd \links
+cd ../links
 open link_results.txt
