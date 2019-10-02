@@ -1,6 +1,3 @@
-cd .\.script
-cls
-node checkUrl
-node newLineHandler
-cd ..\links
-start link_results.txt
+node .\.script\checkUrl
+node .\.script\newLineHandler
+start .\links\link_results.txt
