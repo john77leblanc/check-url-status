@@ -1,4 +1,5 @@
-cd "`dirname "$0"`"
+#!/bin/sh
+cd `dirname $0`
 cd \.script
 clear
 node checkUrl
